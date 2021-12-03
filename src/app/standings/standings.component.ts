@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Schedule } from '../interface/schedule';
 import { Team } from '../interface/team';
+import { SoccerService } from '../service/SoccerService';
 import { Ranking } from '../interface/ranking';
-import {SoccerService} from '../service/SoccerService';
 
 @Component({
   selector: 'app-standings',
@@ -18,12 +18,12 @@ export class StandingsComponent implements OnInit {
   public Standings : Ranking[];
 
   constructor(private _titleService:Title, private _soccerService: SoccerService) {
-    this._titleService.setTitle('Pertandingan Sepakbola Negara Akoeh');
+    this._titleService.setTitle('Pertandingan Sepakbola Negara Berkembang');
     this.MyTeams=[];
     this.MySchedule=[];
     this.Standings=[];
     this.getTeams();
-    this.LeagueName = "Liga ku";
+    this.LeagueName = "Liga Negara Berkembang";
     this.getSchedule();
     this.ComputeRankings();
    }
@@ -98,5 +98,5 @@ export class StandingsComponent implements OnInit {
     }
     return FoundAt;
   }
-
+  
 }
